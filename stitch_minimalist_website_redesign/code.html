@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReturnTrack - EMZA STORE | Dashboard Retur Terpadu</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Stylesheet -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<!-- END: Custom Stylesheet -->
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col lg:flex-row">
+<!-- BEGIN: Sidebar -->
+<aside class="w-full lg:w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 select-none" data-purpose="sidebar-navigation">
+<div>
+<!-- Store Branding -->
+<div class="h-16 flex items-center px-6 border-b border-slate-100 gap-3">
+<div class="w-9 h-9 rounded-xl bg-brand-600 text-white flex items-center justify-center font-bold text-base shadow-sm shadow-blue-200">
+          R
+        </div>
+<div>
+<h1 class="text-sm font-bold tracking-tight text-slate-900 leading-tight">ReturnTrack</h1>
+<span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">EMZA STORE</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="px-4 py-5 space-y-6">
+<div>
+<p class="px-3 text-[11px] font-semibold tracking-wider text-slate-400 uppercase mb-2">Overview</p>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg bg-brand-50 text-brand-700" href="#">
+<svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Import Data
+            </a>
+</nav>
+</div>
+<div>
+<p class="px-3 text-[11px] font-semibold tracking-wider text-slate-400 uppercase mb-2">Operasional</p>
+<nav class="space-y-1">
+<a class="flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Data Retur
+              </div>
+<span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold">3</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Scan Paket
+            </a>
+<a class="flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Perlu Diperiksa
+              </div>
+<span class="text-xs px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 font-semibold border border-amber-200">2</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Riwayat Scan
+            </a>
+</nav>
+</div>
+<div>
+<p class="px-3 text-[11px] font-semibold tracking-wider text-slate-400 uppercase mb-2">Analitik &amp; Sistem</p>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Laporan
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Pengaturan
+            </a>
+</nav>
+</div>
+</div>
+</div>
+<!-- User Account Footnote -->
+<div class="p-4 border-t border-slate-100 flex items-center justify-between bg-slate-50/50">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold text-xs shrink-0">
+          A
+        </div>
+<div class="min-w-0">
+<p class="text-xs font-semibold text-slate-800 truncate leading-snug">Admin Emza</p>
+<p class="text-[11px] text-slate-400 truncate">admin@emza.test</p>
+</div>
+</div>
+<button class="p-1.5 text-slate-400 hover:text-slate-600 rounded-md hover:bg-slate-100 transition-colors" title="Ganti Akun" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+<!-- Top Action Bar -->
+<header class="h-16 bg-white border-b border-slate-200 px-6 sm:px-8 flex items-center justify-between gap-4 sticky top-0 z-20" data-purpose="top-navbar">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Live Monitoring
+        </span>
+<span class="text-xs text-slate-400 hidden sm:inline">•</span>
+<span class="text-xs font-medium text-slate-500 hidden sm:inline">Senin, 28 September 2026</span>
+</div>
+<!-- Quick Actions in Nav -->
+<div class="flex items-center gap-2 sm:gap-3">
+<div class="relative hidden md:block">
+<input class="w-56 lg:w-64 pl-9 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500" placeholder="Cari No. Resi / Order..." type="text"/>
+<svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<button class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg text-white bg-brand-600 hover:bg-brand-700 transition shadow-sm" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          Scan Paket
+        </button>
+</div>
+</header>
+<!-- Page Content Container -->
+<div class="p-6 sm:p-8 space-y-6 max-w-7xl w-full mx-auto">
+<!-- BEGIN: Hero Banner (Redesigned: Sleek, Crisp, Not Heavy) -->
+<section class="bg-gradient-to-r from-blue-900 via-brand-800 to-indigo-900 rounded-2xl p-6 sm:p-7 text-white shadow-sm relative overflow-hidden" data-purpose="hero-summary-card">
+<!-- Background subtle decorative pattern -->
+<div class="absolute -right-8 -bottom-10 w-64 h-64 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="max-w-xl space-y-2">
+<h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white leading-snug">
+              Semua retur terkendali dalam satu layar.
+            </h2>
+<p class="text-xs sm:text-sm text-blue-100 font-normal leading-relaxed">
+              Pantau paket masuk real-time, kejar status tertunda, dan selesaikan claim kurir tanpa hambatan.
+            </p>
+<!-- Quick Inline Meta Stats -->
+<div class="pt-3 flex flex-wrap items-center gap-6 sm:gap-8 border-t border-white/10 text-xs">
+<div>
+<span class="text-blue-200 block text-[11px]">Diterima Hari Ini</span>
+<span class="font-bold text-base text-white">0</span>
+</div>
+<div class="w-px h-6 bg-white/10"></div>
+<div>
+<span class="text-blue-200 block text-[11px]">Retur 7 Hari</span>
+<span class="font-bold text-base text-white">1</span>
+</div>
+<div class="w-px h-6 bg-white/10"></div>
+<div>
+<span class="text-blue-200 block text-[11px]">Butuh Tindakan</span>
+<span class="font-bold text-base text-amber-300">2 <span class="text-xs font-normal text-amber-200/80">paket</span></span>
+</div>
+</div>
+</div>
+<!-- Direct Operational CTAs -->
+<div class="flex flex-wrap lg:flex-col items-stretch gap-2.5 sm:min-w-[200px] shrink-0">
+<button class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white text-brand-900 hover:bg-blue-50 text-xs font-bold rounded-xl shadow-sm transition" type="button">
+<svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Scan Paket Masuk
+            </button>
+<div class="flex items-center gap-2 w-full">
+<button class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-white/10 hover:bg-white/15 text-white text-xs font-semibold rounded-lg border border-white/10 transition" type="button">
+<svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Import TikTok
+              </button>
+<button class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-white/10 hover:bg-white/15 text-white text-xs font-semibold rounded-lg border border-white/10 transition" type="button">
+<svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Laporan
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Hero Banner -->
+<!-- BEGIN: Streamlined KPI Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" data-purpose="primary-kpis">
+<!-- Total Retur -->
+<div class="bg-white rounded-xl p-4 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-slate-500">Total Retur Aktif</span>
+<span class="p-1.5 rounded-lg bg-blue-50 text-brand-600">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold text-slate-900">3</span>
+<span class="text-xs text-slate-400">paket total</span>
+</div>
+<p class="text-[11px] text-amber-600 font-medium mt-1">3 belum selesai penanganan</p>
+</div>
+</div>
+<!-- Sudah Diterima -->
+<div class="bg-white rounded-xl p-4 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-slate-500">Sudah Diterima Fisik</span>
+<span class="p-1.5 rounded-lg bg-emerald-50 text-emerald-600">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold text-slate-900">0</span>
+<span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 font-medium">0% tuntas</span>
+</div>
+<p class="text-[11px] text-slate-400 mt-1">Belum ada paket tiba di gudang</p>
+</div>
+</div>
+<!-- Dalam Pengiriman -->
+<div class="bg-white rounded-xl p-4 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-slate-500">Dalam Pengiriman</span>
+<span class="text-[10px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded bg-blue-50 text-brand-700">On Track</span>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold text-slate-900">1</span>
+<span class="text-xs text-slate-400">paket</span>
+</div>
+<p class="text-[11px] text-slate-500 mt-1">Dalam batas estimasi normal kurir</p>
+</div>
+</div>
+<!-- Terlambat & Butuh Tindakan -->
+<div class="bg-white rounded-xl p-4 border border-rose-200 bg-rose-50/20 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-rose-700">Perlu Penanganan Cepat</span>
+<span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">Kritis</span>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold text-rose-600">2</span>
+<span class="text-xs text-rose-500 font-medium">paket tertunda</span>
+</div>
+<p class="text-[11px] text-rose-600 mt-1">1 terlambat • 1 perlu periksa</p>
+</div>
+</div>
+</section>
+<!-- END: Streamlined KPI Grid -->
+<!-- BEGIN: Compact Status Filter Pills -->
+<section class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-sm flex items-center justify-between flex-wrap gap-2 text-xs" data-purpose="status-breakdown-bar">
+<div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
+<span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mr-1">Status Rincian:</span>
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+            Terlambat: <span class="font-bold">1</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-orange-50 text-orange-800 border border-orange-200 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+            Perlu Diperiksa: <span class="font-bold">1</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-50 text-slate-600 border border-slate-200 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+            Investigasi: <span class="font-bold">0</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-50 text-slate-600 border border-slate-200 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+            Hilang: <span class="font-bold">0</span>
+</button>
+</div>
+<span class="text-[11px] text-slate-400 hidden xl:inline">Klik badge status untuk menyaring tabel langsung</span>
+</section>
+<!-- END: Compact Status Filter Pills -->
+<!-- BEGIN: Main Dashboard Grid (2 Columns) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left 2 Columns: Activity Chart & Action Tables -->
+<div class="lg:col-span-2 space-y-6">
+<!-- 14-Day Activity Trend (Clean & Simple) -->
+<div class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-sm" data-purpose="trend-card">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h3 class="text-sm font-bold text-slate-800">Tren 14 Hari Terakhir</h3>
+<p class="text-xs text-slate-400">Perbandingan paket masuk vs paket diterima per hari</p>
+</div>
+<div class="flex items-center gap-4 text-xs">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-brand-600"></span>
+<span class="text-slate-600 font-medium">Masuk</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-emerald-500"></span>
+<span class="text-slate-600 font-medium">Diterima</span>
+</div>
+</div>
+</div>
+<!-- Stylized Minimal Chart Bars -->
+<div class="h-36 pt-6 flex items-end justify-between gap-1 sm:gap-2 px-2 border-b border-slate-100 pb-2">
+<!-- Day 15 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">15</span>
+</div>
+<!-- Day 16 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">16</span>
+</div>
+<!-- Day 17 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">17</span>
+</div>
+<!-- Day 18 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">18</span>
+</div>
+<!-- Day 19 (Active) -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-brand-600 rounded-t-sm h-16" title="1 Paket Masuk"></div>
+</div>
+<span class="text-[10px] font-bold text-brand-600">19</span>
+</div>
+<!-- Day 20 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">20</span>
+</div>
+<!-- Day 21 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">21</span>
+</div>
+<!-- Day 22 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">22</span>
+</div>
+<!-- Day 23 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">23</span>
+</div>
+<!-- Day 24 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">24</span>
+</div>
+<!-- Day 25 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">25</span>
+</div>
+<!-- Day 26 (Active) -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-brand-600 rounded-t-sm h-16" title="1 Paket Masuk"></div>
+</div>
+<span class="text-[10px] font-bold text-brand-600">26</span>
+</div>
+<!-- Day 27 -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-100 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] text-slate-400">27</span>
+</div>
+<!-- Day 28 (Today) -->
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full flex items-end justify-center gap-0.5 h-20">
+<div class="w-2 sm:w-3 bg-slate-200 rounded-t-sm h-2"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-700">28</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-slate-400 pt-2">
+<span>Maksimal: 1 paket / hari</span>
+<span>0 diterima dalam 7 hari terakhir</span>
+</div>
+</div>
+<!-- Section: Prioritas Penanganan (Action Needed Table) -->
+<div class="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden" data-purpose="priority-orders-card">
+<div class="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-sm font-bold text-slate-800">Prioritas Penanganan</h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-rose-50 text-rose-600 border border-rose-100">
+                    2 Perlu Respon
+                  </span>
+</div>
+<p class="text-xs text-slate-400 mt-0.5">Selesaikan urutan dari umur retur paling lama</p>
+</div>
+<a class="text-xs font-semibold text-brand-600 hover:text-brand-700 inline-flex items-center gap-1" href="#">
+                Buka inspeksi
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs">
+<thead class="bg-slate-50/75 text-slate-500 font-semibold border-b border-slate-100">
+<tr>
+<th class="py-3 px-4">Resi / Kurir</th>
+<th class="py-3 px-4">Produk</th>
+<th class="py-3 px-4">Umur</th>
+<th class="py-3 px-4">Status</th>
+<th class="py-3 px-4 text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-3.5 px-4">
+<span class="font-bold text-brand-600 hover:underline cursor-pointer">JY00123456791</span>
+<p class="text-[11px] text-slate-400">J&amp;T Express • 579123456789012343</p>
+</td>
+<td class="py-3.5 px-4 font-medium text-slate-800">
+                      Celana Cargo Panjang
+                      <span class="block text-[11px] text-slate-400">14 Sep 2026 • Gagal Kirim</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-700">14 hr</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-rose-50 text-rose-700 border border-rose-200">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+                        Perlu Diperiksa
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-2.5 py-1 text-[11px] font-medium rounded-md bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 shadow-sm">
+                        Proses
+                      </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-3.5 px-4">
+<span class="font-bold text-brand-600 hover:underline cursor-pointer">JX00123456790</span>
+<p class="text-[11px] text-slate-400">J&amp;T Express • 579123456789012342</p>
+</td>
+<td class="py-3.5 px-4 font-medium text-slate-800">
+                      Celana Training
+                      <span class="block text-[11px] text-slate-400">19 Sep 2026 • Refund Setelah Diterima</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">9 hr</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-amber-50 text-amber-700 border border-amber-200">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                        Terlambat
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-2.5 py-1 text-[11px] font-medium rounded-md bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 shadow-sm">
+                        Follow-up
+                      </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-3.5 px-4">
+<span class="font-bold text-slate-700 hover:underline cursor-pointer">JY00123456789</span>
+<p class="text-[11px] text-slate-400">J&amp;T Express • 579123456789012341</p>
+</td>
+<td class="py-3.5 px-4 font-medium text-slate-800">
+                      Celana Cargo Pendek
+                      <span class="block text-[11px] text-slate-400">26 Sep 2026 • Gagal Kirim</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-700">2 hr</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-slate-100 text-slate-600">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                        Dalam Perjalanan
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-2.5 py-1 text-[11px] font-medium rounded-md bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 shadow-sm">
+                        Lacak
+                      </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Section: Retur Terbaru Table -->
+<div class="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden" data-purpose="recent-returns-card">
+<div class="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between">
+<div>
+<h3 class="text-sm font-bold text-slate-800">Retur Terbaru</h3>
+<p class="text-xs text-slate-400">Aktivitas paket yang tercatat dari semua saluran</p>
+</div>
+<a class="text-xs font-semibold text-brand-600 hover:text-brand-700 inline-flex items-center gap-1" href="#">
+                Lihat semua
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs">
+<thead class="bg-slate-50/75 text-slate-500 font-semibold border-b border-slate-100">
+<tr>
+<th class="py-3 px-4">Nomor Resi</th>
+<th class="py-3 px-4">Produk</th>
+<th class="py-3 px-4">Tanggal</th>
+<th class="py-3 px-4">Status Akhir</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-3 px-4 font-medium text-slate-600">
+<span class="text-slate-400 italic">Tanpa resi fisik</span>
+<span class="block text-[11px] text-slate-400">579123456789012344</span>
+</td>
+<td class="py-3 px-4 text-slate-700 font-medium">Kemeja Flanel (L Merah)</td>
+<td class="py-3 px-4 text-slate-500">27 Sep 2026</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        Selesai Tanpa Retur Fisik
+                      </span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-3 px-4 font-bold text-slate-800">JY00123456789</td>
+<td class="py-3 px-4 text-slate-700 font-medium">Celana Cargo Pendek (XL Hitam)</td>
+<td class="py-3 px-4 text-slate-500">26 Sep 2026</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-slate-100 text-slate-700">
+                        Belum Diterima
+                      </span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-3 px-4 font-bold text-slate-800">JX00123456790</td>
+<td class="py-3 px-4 text-slate-700 font-medium">Celana Training (L Navy)</td>
+<td class="py-3 px-4 text-slate-500">19 Sep 2026</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-amber-50 text-amber-700 border border-amber-200">
+                        Terlambat
+                      </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right 1 Column: Operational Focus & Auxiliary Breakdown -->
+<div class="space-y-6">
+<!-- Fokus Hari Ini Card -->
+<div class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-sm" data-purpose="daily-focus-card">
+<div class="flex items-center justify-between mb-3">
+<div>
+<h3 class="text-sm font-bold text-slate-800">Fokus Hari Ini</h3>
+<p class="text-xs text-slate-400">Daftar tindakan yang wajib diselesaikan</p>
+</div>
+<span class="w-6 h-6 rounded-full bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center">
+                2
+              </span>
+</div>
+<!-- Task Items -->
+<div class="space-y-2 mt-4">
+<a class="group flex items-center justify-between p-3 rounded-lg border border-slate-100 hover:border-amber-200 hover:bg-amber-50/30 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-200">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-slate-800 group-hover:text-amber-900">1 Pemeriksaan resi</h4>
+<p class="text-[11px] text-slate-400">Cek tracking stagnant &gt; 14 hari</p>
+</div>
+</div>
+<svg class="w-4 h-4 text-slate-300 group-hover:text-amber-600 transition-colors" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a class="group flex items-center justify-between p-3 rounded-lg border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-lg bg-blue-50 text-brand-600 flex items-center justify-center shrink-0 border border-blue-200">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-slate-800 group-hover:text-brand-900">0 Klaim siap dibuat</h4>
+<p class="text-[11px] text-slate-400">Siapkan tiket ganti rugi kurir</p>
+</div>
+</div>
+<svg class="w-4 h-4 text-slate-300 group-hover:text-brand-600 transition-colors" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<!-- Single Focus Action Button -->
+<button class="w-full mt-4 py-2.5 px-4 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2 shadow-sm transition" type="button">
+<span>Scan Paket Berikutnya</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<!-- Refund Info Hint -->
+<div class="mt-3 p-2.5 rounded-lg bg-slate-50 border border-slate-100 flex items-start gap-2">
+<svg class="w-3.5 h-3.5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<p class="text-[11px] text-slate-500 leading-snug">
+<span class="font-semibold text-slate-700">1 Refund</span> diselesaikan tanpa retur fisik (otomatis disaring dari radar fisik).
+              </p>
+</div>
+</div>
+<!-- Jalur Retur & Kurir Analytics -->
+<div class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-sm space-y-5" data-purpose="distribution-card">
+<div>
+<h3 class="text-sm font-bold text-slate-800">Distribusi Jalur Retur</h3>
+<p class="text-xs text-slate-400">Asal paket &amp; beban pengiriman</p>
+</div>
+<!-- Progress 1: Gagal Kirim -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-xs">
+<span class="font-medium text-slate-700">Gagal Kirim (RTS)</span>
+<span class="font-bold text-slate-800">2 <span class="font-normal text-slate-400">(66.7%)</span></span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-brand-600 h-2 rounded-full" style="width: 66.7%"></div>
+</div>
+<span class="text-[10px] text-slate-400">Jalur A • J&amp;T JY</span>
+</div>
+<!-- Progress 2: Refund Diterima -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-xs">
+<span class="font-medium text-slate-700">Refund Pembeli</span>
+<span class="font-bold text-slate-800">1 <span class="font-normal text-slate-400">(33.3%)</span></span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-indigo-500 h-2 rounded-full" style="width: 33.3%"></div>
+</div>
+<span class="text-[10px] text-slate-400">Jalur B • J&amp;T JX</span>
+</div>
+<div class="pt-4 border-t border-slate-100">
+<div class="flex items-center justify-between text-xs mb-2">
+<span class="font-semibold text-slate-700">Ekspedisi Teratas</span>
+<span class="text-brand-600 font-bold">100% Volume</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-red-600 text-white flex items-center justify-center font-bold text-[9px]">
+                    J&amp;T
+                  </div>
+<span class="text-xs font-semibold text-slate-800">J&amp;T Express</span>
+</div>
+<span class="text-xs font-bold text-slate-700">3 Paket</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Main Dashboard Grid -->
+</div>
+</main>
+<!-- END: MainContentArea -->
+</body></html>
